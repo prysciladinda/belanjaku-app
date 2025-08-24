@@ -1,0 +1,387 @@
+@import "tailwindcss";
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-100;
+  }
+  .container-px {
+    @apply container mx-auto px-3 sm:px-4 md:px-6;
+  }
+}
+
+/* Hover effects */
+.hover\:shadow-lg:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.transition-shadow {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Capitalize utility */
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* Leading utilities */
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+/* Category styling */
+.category-item {
+  transition: all 0.2s ease-in-out;
+}
+
+.category-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive grid utilities */
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sm\:grid-cols-4 {
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.md\:grid-cols-6 {
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.lg\:grid-cols-7 {
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+
+/* Centering utilities */
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+/* Text sizing utilities */
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.md\:text-3xl {
+  @media (min-width: 768px) {
+    font-size: 1.875rem;
+  }
+}
+
+/* Spacing utilities */
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.md\:gap-6 {
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+  }
+}
+
+/* Image sizing utilities */
+.w-16 {
+  width: 4rem;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
+.md\:w-20 {
+  @media (min-width: 768px) {
+    width: 5rem;
+  }
+}
+
+.md\:h-20 {
+  @media (min-width: 768px) {
+    height: 5rem;
+  }
+}
+
+/* Text sizing for mobile */
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.md\:text-sm {
+  @media (min-width: 768px) {
+    font-size: 0.875rem;
+  }
+}
+
+/* Leading utilities */
+.leading-tight {
+  line-height: 1.25;
+}
+
+/* Smooth scrolling untuk overflow */
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #e5e7eb transparent;
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+  height: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background-color: #e5e7eb;
+  border-radius: 2px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background-color: #d1d5db;
+}
+
+/* Image fallback styling */
+.category-image {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+/* Pagination styling */
+.pagination-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.pagination-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading spinner */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom smooth scroll untuk browser yang tidak support */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Pagination button states */
+.pagination-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.pagination-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Active page button */
+.pagination-button.active {
+  background-color: #2e7d32;
+  color: white;
+  border-color: #2e7d32;
+}
+
+/* Responsive pagination */
+@media (max-width: 640px) {
+  .pagination-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .page-numbers {
+    order: 2;
+  }
+
+  .page-info {
+    order: 1;
+    text-align: center;
+  }
+
+  .pagination-buttons {
+    order: 3;
+    justify-content: center;
+  }
+}
+
+/* Loading animation */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+.transition-transform {
+  transition: transform 0.2s ease-in-out;
+}
+
+.transition-colors {
+  transition: color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+}
+
+/* Product range info styling */
+.product-range-info {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.product-range-detail {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* Page info styling */
+.page-info {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+  .product-range-info {
+    font-size: 0.75rem;
+  }
+
+  .product-range-detail {
+    font-size: 0.625rem;
+  }
+}
+
+/* Header pagination responsive */
+@media (max-width: 768px) {
+  .header-pagination {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .header-pagination .pagination-buttons {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header-pagination .page-info {
+    order: 1;
+    width: 100%;
+  }
+}
+
+/* Compact pagination for header */
+.header-pagination .pagination-button {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.875rem;
+}
+
+.header-pagination .pagination-button.prev-next {
+  min-width: auto;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Smooth transitions */
+.header-pagination {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Loading state for header pagination */
+.header-pagination.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Responsive pagination untuk brands */
+@media (max-width: 640px) {
+  .header-pagination {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .header-pagination .pagination-buttons {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header-pagination .page-info {
+    order: 1;
+    width: 100%;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
